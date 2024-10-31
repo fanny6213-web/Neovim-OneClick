@@ -15,8 +15,13 @@ cp config_files/packer.lua ~/.config/nvim/lua/plugins
 #installing package manager
 ./individual_scripts/packer.sh
 
+#dependencies 
+echo "CHECKING FOR DEPENDENCIES"
+./individual_scripts/ripgrep.sh
+
 #Installing plugins
-nvim -c "luafile ~/.config/nvim/lua/plugins/packer.lua" -c "PackerSync" -c "autocmd User PackerComplete quitall"
+echo "INSTALLING NVIM PLUGINS (HEADLESS MODE)"
+nvim --headless -c "luafile ~/.config/nvim/lua/plugins/packer.lua" -c "PackerSync" -c "autocmd User PackerComplete quitall"
 cp config_files/init.lua ~/.config/nvim/
 
 #copying remaps.lua
