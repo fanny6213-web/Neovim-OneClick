@@ -21,6 +21,7 @@ cp config_files/packer.lua ~/.config/nvim/lua/plugins/
 #dependencies 
 echo "CHECKING FOR DEPENDENCIES"
 ./individual_scripts/ripgrep.sh
+./individual_scripts/g++.sh
 
 #Installing plugins
 echo "INSTALLING NVIM PLUGINS (HEADLESS MODE)"
@@ -30,6 +31,7 @@ cp config_files/init.lua ~/.config/nvim/
 #copying NVIM configuration files
 cp config_files/remaps.lua ~/.config/nvim/lua/plugins/
 cp config_files/colors.lua ~/.config/nvim/lua/plugins/
+cp config_files/treesitter.lua ~/.config/nvim/lua/plugins/
 
 #copying all plugin after-configuration files
 cp config_files/after/* ~/.config/nvim/after/plugin/

@@ -14,5 +14,8 @@ return require('packer').startup(function(use)
 	use 'vim-airline/vim-airline-themes'
 
 	use 'tpope/vim-fugitive'
+	
+	use 'nvim-treesitter/nvim-treesitter'
+	run = ':TSUpdate'
 
 end)
