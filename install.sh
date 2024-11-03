@@ -3,6 +3,7 @@
 
 #initializing the nvim configuraton directory 
 sudo rm -r ~/.local/share/nvim/
+sudo rm -r ~/.local/state/nvim/
 rm -r ~/.config/nvim
 echo REMOVED PREVIOUS NEOVIM CONFIGURATION
 mkdir ~/.config/nvim
@@ -22,10 +23,12 @@ cp config_files/packer.lua ~/.config/nvim/lua/plugins/
 echo "CHECKING FOR DEPENDENCIES"
 ./individual_scripts/ripgrep.sh
 ./individual_scripts/g++.sh
+./individual_scripts/npm.sh
+./individual_scripts/unzip.sh
 
 #Installing plugins
 echo "INSTALLING NVIM PLUGINS (HEADLESS MODE)"
-nvim --headless -c "luafile ~/.config/nvim/lua/plugins/packer.lua" -c "PackerSync" -c "autocmd User PackerComplete quitall"
+nvim -c "luafile ~/.config/nvim/lua/plugins/packer.lua" -c "PackerSync" -c "autocmd User PackerComplete quitall"
 cp config_files/init.lua ~/.config/nvim/
 
 #copying NVIM configuration files
